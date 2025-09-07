@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VORZA</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        :root {
+            --negro: #0a0a0a;
+            --gris-oscuro: #fffcfc;
+            --gris-medio: #333333;
+            --rojo: #b90b0b;
+            --blanco: #ffffff;
+        }
+
+        body {
+            line-height: 1.5;
+            color: var(--negro);
+            background-color: var(--gris-oscuro);
+        }
+
+        .contenedor {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Cabecera */
+        .cabecera {
+            background-color: var(--negro);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--rojo);
+        }
+
+        .navegacion {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-nav {
+            height: 40px;
+            width: auto;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: var(--rojo);
+            color: var(--blanco);
+        }
+
+        /* Sección principal */
+        .principal {
+            padding: 120px 0 70px;
+            background-color:#ffffff;
+            text-align: center;
+        }
+        .principal h1 {
+            font-size: 3.6rem;
+            margin-bottom: 15px;
+        }
+
+        .eslogan {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #ad0b0b;
+            font-style: italic;
+        }
+
+        /* Sección genérica */
+        .seccion {
+            padding: 50px 0;
+            background-color: var(--gris-oscuro);
+        }
+
+        .titulo {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--negro);
+            text-align: center;
+        }
+
+        .tarjeta {
+            background-color: var(--gris-oscuro);
+            border: 1px solid var(--gris-medio);
+            border-radius: 5px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        /* ---- Servicios ---- */
+        .contenedor-item {
+            background: #b90b0b;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .contenedor-item:hover {
+            background: #a10a0a;
+        }
+        .submenu {
+            display: none;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 0 0 8px 8px;
+            margin: 0;
+            padding: 15px;
+            list-style: none;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* ---- Portafolio ---- */
+        .texto-centro { text-align: center; }
+        .subtitulo-portafolio {
+          color: var(--negro);
+          opacity: .9;
+          margin: -10px 0 20px;
+          font-size: 1.05rem;
+        }
+
+        .grid-portafolio {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+          gap: 18px;
+        }
+
+        .proyecto-card {
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+        }
+
+        .proyecto-body {
+          padding: 16px 18px 18px;
+        }
+
+        .proyecto-titulo {
+          color: var(--negro);
+          font-size: 1.15rem;
+          margin-bottom: 8px;
+        }
+
+        .proyecto-descripcion {
+          color: #333;
+          font-size: .98rem;
+          line-height: 1.45;
+          margin-bottom: 12px;
+        }
+
+        .pill-list {
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin: 0 0 12px 0;
+          padding: 0;
+        }
+        .pill {
+          background: rgba(0,0,0,.06);
+          border: 1px solid var(--gris-medio);
+          border-radius: 999px;
+          padding: 5px 10px;
+          font-size: .85rem;
+          color: var(--negro);
+        }
+
+        /* ---- Contacto ---- */
+        .correo {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 30px;
+            color: #000;
+        }
+
+        /* ---- Pie ---- */
+        .pie {
+            background-color: var(--negro);
+            color: var(--blanco);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid var(--gris-medio);
+        }
+
+        .logo-pie {
+            height: 50px;
+            width: auto;
+            margin-bottom: 20px;
+        }
+
+        .enlaces-pie {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .enlaces-pie li {
+            margin: 0 10px;
+        }
+
+        .enlaces-pie a {
+            color: #aaaaaa;
+            text-decoration: none;
+        }
+
+        .enlaces-pie a:hover {
+            color: var(--rojo);
+        }
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra superior -->
+    <header class="cabecera">
+        <div class="contenedor">
+            <nav class="navegacion">
+                <img src="Vorza Logo.png" alt="Logo de Vorza" class="logo-nav">
+                <ul class="menu">
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#portafolio">Portafolio</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Principal -->
+    <section class="principal">
+        <div class="contenedor">
+            <h1 class="nombre">VORZA</h1>
+            <p class="eslogan">"Orden digital, éxito real."</p>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="seccion">
+      <div class="contenedor">
+        <h2 class="titulo">Nuestros Servicios</h2>
+
+        <div class="contenedor-item" onclick="toggleContenedor('web1')">Desarrollo de Software a la Medida</div>
+        <ul id="web1" class="submenu">
+          <li>•Creamos sistemas personalizados que se adaptan a las necesidades específicas de cada negocio u organización.</li>
+        </ul>
+
+        <div class="contenedor-item" onclick="toggleContenedor('web2')">Digitalización de Procesos</div>
+        <ul id="web2" class="submenu">
+          <li>•Transformamos procesos manuales en soluciones digitales que ahorran tiempo y reducen errores.</li>
+        </ul>
+
+        <div class="contenedor-item" onclick="toggleContenedor('web3')">Desarrollo de Páginas y Aplicaciones Web</div>
+        <ul id="web3" class="submenu">
+          <li>•Sitios web modernos y aplicaciones accesibles para mejorar la presencia digital.</li>    
+        </ul>
+
+        <div class="contenedor-item" onclick="toggleContenedor('web4')">Consultoría Tecnológica</div>
+        <ul id="web4" class="submenu">
+            <li>•Asesoría especializada para implementar las mejores soluciones tecnológicas en tu empresa.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Script para desplegables -->
+    <script>
+      function toggleContenedor(id) {
+        var submenu = document.getElementById(id);
+        submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+      }
+    </script>
+
+    <!-- Portafolio -->
+    <section id="portafolio" class="seccion">
+      <div class="contenedor">
+        <h2 class="titulo">Portafolio</h2>
+        <p class="texto-centro subtitulo-portafolio">Trabajos que hemos realizado</p>
+
+        <div class="grid-portafolio">
+          <article class="proyecto-card tarjeta">
+            <div class="proyecto-body">
+              <h3 class="proyecto-titulo">NEXSIT — Gestión de Citas</h3>
+              <p class="proyecto-descripcion">Plataforma web para negocios que centraliza agendas y disponibilidad en tiempo real.</p>
+              <ul class="pill-list">
+                <li class="pill">HTML/CSS</li>
+                <li class="pill">JSP/Servlets</li>
+                <li class="pill">MVC</li>
+                <li class="pill">MySQL/JDBC</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proyecto-card tarjeta">
+            <div class="proyecto-body">
+              <h3 class="proyecto-titulo">App de Estudio — Batiz (Química)</h3>
+              <p class="proyecto-descripcion">Aplicación educativa con guías interactivas, banco de reactivos y explicaciones claras para reforzar temas de Química.</p>
+              <ul class="pill-list">
+                <li class="pill">Educación</li>
+                <li class="pill">Banco de preguntas</li>
+                <li class="pill">Quizzes</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proyecto-card tarjeta">
+            <div class="proyecto-body">
+              <h3 class="proyecto-titulo">Re-Market — Menos Desperdicio</h3>
+              <p class="proyecto-descripcion">Software que ofrece productos próximos a caducar a menor precio para reducir el desperdicio y las pérdidas en negocios.</p>
+              <ul class="pill-list">
+                <li class="pill">Impacto social</li>
+                <li class="pill">Inventario</li>
+                <li class="pill">Ofertas dinámicas</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proyecto-card tarjeta">
+            <div class="proyecto-body">
+              <h3 class="proyecto-titulo">Clientes — Proyectos Entregados</h3>
+              <p class="proyecto-descripcion">Desarrollo de sitios informativos, prototipos funcionales y bases de datos a medida.</p>
+              <ul class="pill-list">
+                <li class="pill">Sitios Web</li>
+                <li class="pill">Prototipos</li>
+                <li class="pill">Bases de datos</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="seccion">
+        <div class="contenedor">
+            <h2 class="titulo">Contacto</h2>
+            <p class="correo">official.vorza@gmail.com</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pie">
+        <div class="contenedor">
+            <img src="Vorza Logo.png" alt="Logo de Vorza" class="logo-pie">
+            <ul class="enlaces-pie">
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#portafolio">Portafolio</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <p class="copyright">© 2025 VORZA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
