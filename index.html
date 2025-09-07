@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VORZA</title>
-    <!-- Añadir Font Awesome para iconos -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ===== VARIABLES Y RESETEO ===== */
         :root {
             --negro: #0a0a0a;
             --gris-oscuro: #fffcfc;
@@ -124,6 +123,37 @@
             margin: 0 auto 30px;
             color: var(--rojo);
             font-style: italic;
+        }
+
+        /* ===== NOSOTROS ===== */
+        .contenedor-flex {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .mision, .vision {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .mision h3, .vision h3, .objetivo-general h4, .objetivos-especificos h4 {
+            color: var(--rojo);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .objetivo-general, .objetivos-especificos {
+            margin-bottom: 20px;
+        }
+
+        .lista {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .lista li {
+            margin-bottom: 8px;
         }
 
         /* ===== SERVICIOS ===== */
@@ -327,6 +357,37 @@
         <div class="contenedor">
             <h1 class="nombre">VORZA</h1>
             <p class="eslogan">"Orden digital, éxito real."</p>
+        </div>
+    </section>
+
+    <section id="nosotros" class="seccion">
+        <div class="contenedor">
+            <h2 class="titulo">Sobre Nosotros</h2>
+            <div class="contenedor-flex">
+                <div class="mision tarjeta">
+                    <h3>Misión</h3>
+                    <p>Desarrollar herramientas digitales innovadoras y accesibles que ayuden a negocios y organizaciones a gestionar su información de manera eficiente, simplificando procesos y aumentando su productividad.</p>
+                </div>
+                <div class="vision tarjeta">
+                    <h3>Visión</h3>
+                    <p>Ser una empresa reconocida en el desarrollo de software para la gestión de negocios y organizaciones . Convertirnos en un referente por la innovación de nuestras soluciones. Aspiramos a que nuestros sistemas sean la primera opción de pequeños y medianos negocios que buscan mejorar su productividad y modernizar su forma de trabajar.</p>
+                </div>
+            </div>
+            
+            <div class="tarjeta">
+                <div class="objetivo-general">
+                    <h4>Objetivo General</h4>
+                    <p>Desarrollar soluciones tecnológicas para negocios y organizaciones que mejoren su eficiencia operativa y organización interna, mediante herramientas digitales funcionales y de fácil uso.</p>
+                </div>
+                <div class="objetivos-especificos">
+                    <h4>Objetivos Específicos</h4>
+                    <ul class="lista">
+                        <li>Implementar en los programas interfaces claras, intuitivas y accesibles que permitan a los usuarios comprender y utilizar fácilmente las herramientas digitales.</li>
+                        <li>Impulsar la digitalización de comercios y organizaciones, optimizando sus procesos y fortaleciendo su competitividad.</li>
+                        <li>Crear sistemas que mejoren la coordinación interna dentro de los negocios y organizaciones.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
