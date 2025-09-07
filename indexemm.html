@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VORZA</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        :root {
+            --negro: #0a0a0a;
+            --gris-oscuro: #fffcfc;
+            --gris-medio: #333333;
+            --rojo: green;
+            --blanco: #000000;
+        }
+
+        body {
+            line-height: 1.5;
+            color: var(--negro);
+            background-color: var(--blanco);
+        }
+
+        .contenedor {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+
+        .tarjeta {
+            background-color: var(--gris-oscuro);
+            border: 1px solid var(--gris-medio);
+            border-radius: 5px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .seccion {
+            padding: 50px 0;
+            background-color: var(--gris-oscuro);
+        }
+
+        .titulo {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--blanco);
+            text-align: center;
+        }
+
+        /* Cabecera */
+        .cabecera {
+            background-color: var(--snow);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--gris-medio);
+        }
+
+        .navegacion {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button{
+            background-color: rgba(145, 145, 145, 0.074);
+            color: var(--blanco);
+            border: none;
+            border-radius: 7px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            transition-duration: .5s;
+            background-color:  rgb(46, 46, 46);
+            color: var(--blanco);
+        }
+
+        /* Tamaño logo  */
+        .logo-nav {
+            height: 40px;
+            width: auto;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+
+        /* Sección principal */
+        .principal {
+            padding: 120px 0 70px;
+            background-color:#ffffff;
+            text-align: center;
+        }
+        .principal h1 {
+            font-size: 3.6rem;
+            margin-bottom: 15px;
+        }
+
+        .eslogan {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #ad0b0b;
+            font-style: italic;
+        }
+
+        .contenedor-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .mision, .vision {
+            flex: 1;
+            min-width: 500px;
+        }
+
+        .tarjeta h3 {
+            color: var(--rojo);
+            margin-bottom: 15px;
+        }
+
+        .lista {
+            list-style-type: none;
+            margin: 15px 0 0 10px;
+        }
+
+        .lista li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .lista li::before {
+            content: "•";
+            color: var(--rojo);
+            position: absolute;
+            left: 0;
+        }
+
+        .objetivo-general {
+            margin-bottom: 20px;
+        }
+
+        .objetivos-especificos {
+            margin-top: 15px;
+        }
+
+        .objetivo-general h4, .objetivos-especificos h4 {
+            color: green;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Pie de p*/
+        .pie {
+            background-color: var(--negro);
+            color: var(--blanco);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid var(--gris-medio);
+        }
+
+        .logo-pie {
+            height: 50px;
+            width: auto;
+            margin-bottom: 20px;
+        }
+
+        .enlaces-pie {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .enlaces-pie li {
+            margin: 0 10px;
+        }
+
+        .enlaces-pie a {
+            color: #aaaaaa;
+            text-decoration: none;
+        }
+
+        .enlaces-pie a:hover {
+            color: var(--rojo);
+        }
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="cabecera">
+        <div class="contenedor">
+            <nav class="navegacion">
+                <img src="Vorza Logo.png" alt="Logo de Vorza" class="logo-nav">
+                <ul class="menu">
+                    <li><button ><a href="#nosotros">Nosotros</a> </button> </li>
+                    <li><button ><a href="#servicios">Servicios</a></button></li>
+                    <li><button ><a href="#portafolio">Portafolio</a></button></li>
+                    <li><button ><a href="#contacto">Contacto</a></button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="principal">
+        <div class="contenedor">
+            <h1 class="nombre">VORZA</h1>
+            <p class="eslogan">"Orden digital, éxito real."</p>
+        </div>
+    </section>
+
+    <section id="nosotros" class="seccion">
+        <div class="contenedor">
+            <h2 class="titulo">Sobre Nosotros</h2>
+            <div class="contenedor-flex">
+                <div class="mision tarjeta">
+                    <h3>Misión</h3>
+                    <p>Desarrollar herramientas digitales innovadoras y accesibles que ayuden a negocios y organizaciones a gestionar su información de manera eficiente, simplificando procesos y aumentando su productividad.</p>
+                </div>
+                <div class="vision tarjeta">
+                    <h3>Visión</h3>
+                    <p>Ser una empresa reconocida en el desarrollo de software para la gestión de negocios y organizaciones . Convertirnos en un referente por la innovación de nuestras soluciones. Aspiramos a que nuestros sistemas sean la primera opción de pequeños y medianos negocios que buscan mejorar su productividad y modernizar su forma de trabajar.</p>
+                </div>
+            </div>
+            
+            <div class="tarjeta">
+                <div class="objetivo-general">
+                    <h4>Objetivo General</h4>
+                    <p>Desarrollar soluciones tecnológicas para negocios y organizaciones que mejoren su eficiencia operativa y organización interna, mediante herramientas digitales funcionales y de fácil uso.</p>
+                </div>
+                <div class="objetivos-especificos">
+                    <h4>Objetivos Específicos</h4>
+                    <ul class="lista">
+                        <li>Implementar en los programas interfaces claras, intuitivas y accesibles que permitan a los usuarios comprender y utilizar fácilmente las herramientas digitales.</li>
+                        <li>Impulsar la digitalización de comercios y organizaciones, optimizando sus procesos y fortaleciendo su competitividad.</li>
+                        <li>Crear sistemas que mejoren la coordinación interna dentro de los negocios y organizaciones.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="servicios" class="seccion">
+  <div class="contenedor">
+    <h2 class="titulo">Nuestros Servicios</h2>
+
+    <!-- Servicio 1 -->
+    <div class="contenedor-item" onclick="toggleContenedor('web1')">
+      Desarrollo de Software a la Medida
+    </div>
+    <ul id="web1" class="submenu">
+      <li>
+    •Creamos sistemas personalizados que se adaptan a las necesidades específicas de cada negocio u organización.
+      </li>
+    </ul>
+
+    <!-- Servicio 2 -->
+    <div class="contenedor-item" onclick="toggleContenedor('web2')">
+      Digitalización de Procesos
+    </div>
+    <ul id="web2" class="submenu">
+      <li>
+    •Transformamos procesos manuales en soluciones digitales que ahorran tiempo y reducen errores.
+      </li>
+    </ul>
+
+    <!-- Servicio 3 -->
+     <div class = "contenedor-item" onclick="toggleContenedor('web3')">
+        Desarrollo de Páginas y Aplicaciones Web
+    </div>
+    <ul id="web3" class="submenu">
+    <li> 
+    •Sitios web modernos y aplicaciones accesibles para mejorar la presencia digital.
+    </li>    
+    </ul>
+
+    <!-- Servicio 4 -->
+     <div class="contenedor-item" onclick="toggleContenedor('web4')">
+         Consultoría Tecnológica
+     </div>
+     <ul id = "web4" class="submenu">
+        <li>
+        •Asesoría especializada para implementar las mejores soluciones tecnológicas en tu empresa.
+        </li>
+     </ul>
+  </div>
+</section>
+
+<style>
+  /* Fuente y estilos generales */
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #b5b3b3;
+  }
+
+  .titulo {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  /* Estilo de cada cuadro */
+  .contenedor-item {
+    background: #b90b0b;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .contenedor-item:hover {
+    background: #b90b0b;
+  }
+
+  /* Submenú oculto */
+  .submenu {
+    display: none;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
+    margin: 0;
+    padding: 15px;
+    list-style: none;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .submenu li {
+    margin: 0;
+  }
+</style>
+
+<script>
+  function toggleContenedor(id) {
+    var submenu = document.getElementById(id);
+    submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+  }
+</script>
+
+
+
+    <!-- Sección Portafolio -->
+    <section id="portafolio" class="seccion">
+        <div class="contenedor">
+            <h2 class="titulo">Portafolio</h2>
+
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="seccion">
+        <div class="contenedor">
+            <h2 class="titulo">Contacto</h2>
+
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="pie">
+        <div class="contenedor">
+            <img src="Vorza Logo.png" alt="Logo de Vorza" class="logo-pie">
+            <ul class="enlaces-pie">
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#portafolio">Portafolio</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <p class="copyright">© 2025 VORZA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
